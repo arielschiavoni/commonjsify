@@ -14,6 +14,13 @@ var yargs = require('yargs').argv;
 var browser = !!yargs.browser;
 var coverage = !!yargs.coverage;
 
+// required to write test reports in CI, mocha does not support
+// multiple reports or write reports to a file so I use reporter-file npm
+// package to solve this problem
+if(process.env.CI) {
+  process.env.MOCHA_REPORTER_FILE = './test/result.xml';
+}
+
 var scripts = [
   './*.js',
   './src/*.js',
@@ -32,7 +39,9 @@ gulp.task('test', 'Run tests' ,function() {
     .pipe(gulpif(coverage, istanbul()))
     .on('finish', function() {
       return gulp.src('./test/*.spec.js', { read: false })
-        .pipe(mocha({ reporter: 'spec' }))
+        .pipe(mocha({
+          reporter: process.env.CI ? 'reporter-file' : 'spec'
+        }))
         .pipe(gulpif(coverage, istanbul.writeReports({
           dir: './coverage',
           reporters: [ 'lcov', 'json', 'cobertura' ]
