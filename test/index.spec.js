@@ -1,6 +1,7 @@
 /* jshint expr: true */
 /* global describe: false, it: false, beforeEach: false */
 'use strict';
+
 var should = require('should');
 var Commonjsify = require('../index');
 
@@ -21,7 +22,9 @@ describe('when the module is instantiated', function() {
     transform.name.should.be.exactly('browserifyTransform');
   });
 
-  describe('when the browserifyTransform function is called with a valid file path', function() {
+  describe('when the browserifyTransform function is called with a ' +
+           'valid file path', function() {
+
     var stream;
 
     beforeEach(function() {

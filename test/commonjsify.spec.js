@@ -1,5 +1,7 @@
 /* jshint expr: true */
 /* global describe: false, it: false, beforeEach: false */
+'use strict';
+
 var should = require('should');
 var Commonjsify = require('../index');
 var fs = require('fs');
