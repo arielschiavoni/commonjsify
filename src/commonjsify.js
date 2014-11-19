@@ -2,9 +2,12 @@
 
 var through = require('through');
 
-function commonjsify(content, options) {
-  // TODO: Implement shiming from here
-  return content + '\n module.exports = ' + options['lib'].exports + ';';
+function commonjsify(content, exports) {
+  if (exports) {
+    return content + '\n module.exports = window.' + exports + ';';
+  } else {
+    return content;
+  }
 }
 
 /**
@@ -28,7 +31,9 @@ module.exports = function(options) {
 
     var end = function() {
       var content = Buffer.concat(chunks).toString('utf8');
-      this.queue(commonjsify(content, options));
+      // convention fileName == key for shim options
+      var fileName = file.match(/([^\/]+)(?=\.\w+$)/)[0];
+      this.queue(commonjsify(content, options[fileName]));
       this.queue(null);
     };
 

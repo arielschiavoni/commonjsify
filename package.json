@@ -1,6 +1,6 @@
 {
   "name": "commonjsify",
-  "version": "0.0.1",
+  "version": "0.0.0",
   "description": "Browserify transform for non CommonJS libraries/scripts.",
   "author": {
     "name": "Ariel Schiavoni",
@@ -17,20 +17,22 @@
   "keywords": [
     "browserify",
     "transform",
+    "browserify-transform",
     "shim",
     "commonjs"
   ],
   "license": "MIT",
   "main": "index.js",
   "scripts": {
-    "test": "./node_modules/.bin/gulp lint && NODE_ENV=test ./node_modules/.bin/gulp test --coverage",
-    "test-debug": "NODE_ENV=test node-debug --no-preload --no-debug-brk ./node_modules/.bin/gulp test"
+    "test": "gulp lint && NODE_ENV=test gulp test --coverage",
+    "test-debug": "NODE_ENV=test node-debug --no-preload --no-debug-brk gulp test"
   },
   "dependencies": {
     "through": "^2.3.6"
   },
   "devDependencies": {
     "browserify": "^6.3.2",
+    "chai": "^1.10.0",
     "gulp": "^3.8.10",
     "gulp-help": "^1.3.0",
     "gulp-if": "^1.2.5",
@@ -42,7 +44,6 @@
     "gulp-rename": "^1.2.0",
     "jshint-stylish": "^1.0.0",
     "reporter-file": "0.0.1",
-    "should": "^4.3.0",
     "vinyl-transform": "0.0.1",
     "yargs": "^1.3.2"
   },

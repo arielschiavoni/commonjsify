@@ -3,6 +3,6 @@
   "validateLineBreaks": "LF",
   "validateIndentation": 2,
   "maximumLineLength": 80,
-  "excludeFiles": ["node_modules/**", "coverage/**"],
+  "excludeFiles": ["node_modules/**", "coverage/**", "test/bundle.js"],
   "maxErrors": 50
 }

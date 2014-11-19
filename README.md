@@ -3,7 +3,7 @@
 
 # Commonjsify #
 
-Browserify transform to shim non CommonJS libraries/scripts
+Browserify transform for non CommonJS libraries/scripts
 
 ## Contributing ##
 

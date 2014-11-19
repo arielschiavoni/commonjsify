@@ -33,7 +33,7 @@ gulp.task('jscs', 'Check JavaScript coding guidelines', function() {
     .pipe(jscs());
 });
 
-gulp.task('jshint', 'Check JavaScript sintax errors', function() {
+gulp.task('jshint', 'Check JavaScript syntax errors', function() {
   return gulp.src(scripts)
     .pipe(jshint())
     .pipe(jshint.reporter(stylish))
