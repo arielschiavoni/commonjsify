@@ -1,7 +1,9 @@
+# Commonjsify #
 [![Stories in Ready](https://badge.waffle.io/arielschiavoni/commonjsify.png?label=ready&title=Ready)](https://waffle.io/arielschiavoni/commonjsify)
+[![David Status](https://david-dm.org/arielschiavoni/commonjsify.png)](https://david-dm.org/arielschiavoni/commonjsify)
 [![Build Status](https://api.shippable.com/projects/5464dd8cc6f0803064f45ffb/badge?branchName=master)](https://app.shippable.com/projects/5464dd8cc6f0803064f45ffb/builds/latest)
 
-# Commonjsify #
+[![NPM](https://nodei.co/npm/commonjsify.png?downloads=true&stars=true)](https://nodei.co/npm/commonjsify/)
 
 Browserify transform for non CommonJS libraries/scripts
 
