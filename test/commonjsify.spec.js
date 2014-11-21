@@ -2,7 +2,7 @@
 'use strict';
 
 var expect = require('chai').expect;
-var Commonjsify = require('../index');
+var commonjsify = require('../index');
 var fs = require('fs');
 var browserify = require('browserify');
 var vm = require('vm');
@@ -18,7 +18,7 @@ describe('commonjsify', function() {
         } else {
           // convert Buffer to string
           content = content.toString();
-          cb(null, Commonjsify.commonjsify(content, exportAs));
+          cb(null, commonjsify.commonjsify(content, exportAs));
         }
       });
     };
@@ -65,16 +65,19 @@ describe('commonjsify', function() {
 
   describe('integrated transform with browserify', function() {
     var fixtures = __dirname + '/fixtures';
-    var entry = fixtures + '/entry.js';
     var bundle = function(requires, commonjsifyConfig, cb) {
-      // entry (empty file) is mandatory to trigger browserify's transform
-      // otherwise it is ignored
-      var bundler = browserify(entry, {read: false});
-      requires.forEach(function(r) {
-        bundler.require(r.file, {expose: r.expose});
+      var bundler = browserify({noParse: false});
+      requires.forEach(function(r, i) {
+        var requireOpts = {expose: r.expose};
+        if (i === 0) {
+          // mark the first require as entry. It is mandatory otherwise
+          // browserify's transform is ignored
+          requireOpts.entry = true;
+        }
+        bundler.require(r.file, requireOpts);
       });
       // convention require name has to be equal to shim key
-      bundler.transform(new Commonjsify(commonjsifyConfig));
+      bundler.transform(commonjsify(commonjsifyConfig));
       bundler.bundle(function(err, src) {
         var sandbox = {
           window: {},

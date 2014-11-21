@@ -2,13 +2,13 @@
 'use strict';
 
 var expect = require('chai').expect;
-var Commonjsify = require('../index');
+var commonjsify = require('../index');
 
 describe('module integration', function() {
 
   describe('commonjsify is required', function() {
     it('should return a function', function() {
-      expect(Commonjsify).to.be.a('function');
+      expect(commonjsify).to.be.a('function');
     });
   });
 
@@ -16,7 +16,7 @@ describe('module integration', function() {
     var transform;
 
     beforeEach(function() {
-      transform = new Commonjsify();
+      transform = commonjsify();
     });
 
     it('should return a function named "browserifyTransform"', function() {

@@ -2,3 +2,5 @@ node_modules
 coverage
 test/result.xml
 test/bundle.js
+*.sublime-project
+*.sublime-workspace
