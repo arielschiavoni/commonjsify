@@ -52,7 +52,7 @@ gulp.task('test', 'Run tests' , function() {
         }))
         .pipe(gulpif(coverage, istanbul.writeReports({
           dir: './coverage',
-          reporters: ['lcov', 'json', 'cobertura']
+          reporters: ['lcov']
         })))
         .on('finish', function() {
           return gulp.src('./coverage/lcov-report/index.html')

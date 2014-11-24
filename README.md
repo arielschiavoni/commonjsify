@@ -1,9 +1,14 @@
 # commonjsify
-[![Stories in Ready](https://badge.waffle.io/arielschiavoni/commonjsify.png?label=ready&title=Ready)](https://waffle.io/arielschiavoni/commonjsify)
-[![David Status](https://david-dm.org/arielschiavoni/commonjsify.png)](https://david-dm.org/arielschiavoni/commonjsify)
-[![Build Status](https://api.shippable.com/projects/5464dd8cc6f0803064f45ffb/badge?branchName=master)](https://app.shippable.com/projects/5464dd8cc6f0803064f45ffb/builds/latest)
+[![npm version](https://badge.fury.io/js/commonjsify.svg)](http://badge.fury.io/js/commonjsify)
+[![Build Status](https://travis-ci.org/arielschiavoni/commonjsify.svg)](https://travis-ci.org/arielschiavoni/commonjsify)
+[![Coverage Status](https://img.shields.io/coveralls/arielschiavoni/commonjsify.svg)](https://coveralls.io/r/arielschiavoni/commonjsify)
 
-[![NPM](https://nodei.co/npm/commonjsify.png?downloads=true&stars=true)](https://nodei.co/npm/commonjsify/)
+[![David Status](https://david-dm.org/arielschiavoni/commonjsify.png)](https://david-dm.org/arielschiavoni/commonjsify)
+[![devDependency Status](https://david-dm.org/arielschiavoni/commonjsify/dev-status.svg)](https://david-dm.org/arielschiavoni/
+commonjsify#info=devDependencies)
+
+[![Stories in Ready](https://badge.waffle.io/arielschiavoni/commonjsify.png?label=ready&title=Stories)](https://waffle.io/arielschiavoni/commonjsify)
+
 
 [Browserify](https://github.com/substack/node-browserify) transform for non CommonJS libraries/scripts.
 
