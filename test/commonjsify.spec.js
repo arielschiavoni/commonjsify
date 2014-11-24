@@ -2,7 +2,7 @@
 'use strict';
 
 var expect = require('chai').expect;
-var commonjsify = require('../index');
+var commonjsify = require('..');
 var fs = require('fs');
 var browserify = require('browserify');
 var vm = require('vm');
