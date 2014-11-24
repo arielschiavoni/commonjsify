@@ -2,7 +2,7 @@
 'use strict';
 
 var expect = require('chai').expect;
-var commonjsify = require('../index');
+var commonjsify = require('..');
 
 describe('module integration', function() {
 
